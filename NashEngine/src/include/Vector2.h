@@ -15,7 +15,7 @@ namespace Nash
 		FVector2(const float& x, const float& y) : X(x), Y(y) {};
 		FVector2(const FVector2& vec) : X(vec.X), Y(vec.Y) {};
 
-		inline FVector2 operator=(const FVector2& vec);
+		inline void operator=(const FVector2& vec);
 		inline bool operator==(const FVector2& vec) const;
 		inline bool operator!=(const FVector2& vec) const;
 		inline FVector2 operator+(const FVector2& vec) const;
@@ -39,9 +39,9 @@ namespace Nash
 	};
 }
 
-Nash::FVector2 Nash::FVector2::operator=(const FVector2 & vec)
+void Nash::FVector2::operator=(const FVector2 & vec)
 {
-	return FVector2(vec);
+	X = vec.X; Y = vec.Y;
 }
 
 bool Nash::FVector2::operator==(const FVector2 & vec) const

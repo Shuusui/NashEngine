@@ -15,7 +15,7 @@ namespace Nash
 		FVector3(const FVector2& vec, const float& z) : X(vec.X), Y(vec.Y), Z(z) {};
 		FVector3(const FVector3& vec) : X(vec.X), Y(vec.Y), Z(vec.Z) {};
 
-		inline FVector3 operator=(const FVector3& vec);
+		inline void operator=(const FVector3& vec);
 		inline bool operator==(const FVector3& vec) const;
 		inline bool operator!=(const FVector3& vec) const;
 		inline FVector3 operator+(const FVector3& vec) const;
@@ -39,9 +39,9 @@ namespace Nash
 	};
 }
 
-Nash::FVector3 Nash::FVector3::operator=(const FVector3 & vec)
+void Nash::FVector3::operator=(const FVector3 & vec)
 {
-	return FVector3(vec);
+	X = vec.X; Y = vec.Y; Z = vec.Z;
 }
 
 bool Nash::FVector3::operator==(const FVector3 & vec) const
