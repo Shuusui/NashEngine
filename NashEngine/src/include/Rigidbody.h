@@ -12,14 +12,21 @@ namespace Nash
 	class Rigidbody
 	{
 	private: 
-		bool m_bSimulatePhysics; 
+		bool m_bSimulatePhysics;
 		bool m_bEnableGravity;
 		FVector3 m_position;
+		float m_mass;
+		FVector3 m_force;
 	public:
 		/**
 		* Default Constructor, every rigidbody needs a position to add a force to an object
+		*
+		* @param position The initial position of the rigidbody
+		* @param mass The mass of the object in kg (Default = 50kg)
+		* @param simulatePhysics activate or disable physics for this object (Default = true)
+		* @param enableGravity activate or disable gravity for this object (Default = true)
 		*/
-		Rigidbody(const FVector3& position, bool simulatePhysics = true, bool enableGravity = true);
+		Rigidbody(const FVector3& position, const float& mass = 50,const bool& simulatePhysics = true, const bool& enableGravity = true);
 		/**
 		* Default constructor is disabled because every Rigidbody needs a position to enable forces
 		*/

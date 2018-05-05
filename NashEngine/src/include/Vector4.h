@@ -12,13 +12,13 @@ namespace Nash
 	{
 	public:
 		float X; float Y; float Z; float W;
-		FVector4();
-		FVector4(const float& x, const float& y, const float& z, const float& w);
-		FVector4(const FVector2& vec, const float& z, const float& w);
-		FVector4(const FVector3& vec, const float& w);
-		FVector4(const FVector4& vec);
+		FVector4() :X(0), Y(0), Z(0), W(0) {};
+		FVector4(const float& x, const float& y, const float& z, const float& w) : X(x), Y(y), Z(z), W(w) {};
+		FVector4(const FVector2& vec, const float& z, const float& w) : X(vec.X), Y(vec.Y), Z(z), W(w) {};
+		FVector4(const FVector3& vec, const float& w) : X(vec.X), Y(vec.Y), Z(vec.Z), W(w) {};
+		FVector4(const FVector4& vec) : X(vec.X), Y(vec.Y), Z(vec.Z), W(vec.W) {};
 
-		inline FVector4 operator=(const FVector4& vec);
+		inline void operator=(const FVector4& vec);
 		inline bool operator==(const FVector4& vec) const;
 		inline bool operator!=(const FVector4& vec) const;
 		inline FVector4 operator+(const FVector4& vec) const;
@@ -40,34 +40,9 @@ namespace Nash
 	};
 }
 
-Nash::FVector4::FVector4()
-	:X(0), Y(0), Z(0), W(0)
+void Nash::FVector4::operator=(const FVector4 & vec)
 {
-}
-
-Nash::FVector4::FVector4(const float & x, const float & y, const float & z, const float & w)
-	: X(x), Y(y), Z(z), W(w)
-{
-}
-
-Nash::FVector4::FVector4(const FVector2 & vec, const float & z, const float & w)
-	: X(vec.X), Y(vec.Y), Z(z), W(w)
-{
-}
-
-Nash::FVector4::FVector4(const FVector3 & vec, const float & w)
-	: X(vec.X), Y(vec.Y), Z(vec.Z), W(w)
-{
-}
-
-Nash::FVector4::FVector4(const FVector4 & vec)
-	: X(vec.X), Y(vec.Y), Z(vec.Z), W(vec.W)
-{
-}
-
-inline Nash::FVector4 Nash::FVector4::operator=(const FVector4 & vec)
-{
-	return FVector4(vec);
+	X = vec.X; Y = vec.Y; Z = vec.Z; W = vec.W;
 }
 
 inline bool Nash::FVector4::operator==(const FVector4 & vec) const

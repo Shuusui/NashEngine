@@ -1,17 +1,19 @@
 #pragma once
+#pragma region Internal Includes
 #include "BaseMath.h"
 #include "Vector2.h"
+#pragma endregion 
 
 namespace Nash
 {
-	class FVector3
+	class __declspec(dllexport) FVector3
 	{
 	public:
 		float X; float Y; float Z;
-		FVector3();
-		FVector3(const float& x, const float& y, const float& z);
-		FVector3(const FVector2& vec, const float& z);
-		FVector3(const FVector3& vec);
+		FVector3() :X(0), Y(0), Z(0) {};
+		FVector3(const float& x, const float& y, const float& z) : X(x), Y(y), Z(z) {};
+		FVector3(const FVector2& vec, const float& z) : X(vec.X), Y(vec.Y), Z(z) {};
+		FVector3(const FVector3& vec) : X(vec.X), Y(vec.Y), Z(vec.Z) {};
 
 		inline FVector3 operator=(const FVector3& vec);
 		inline bool operator==(const FVector3& vec) const;
@@ -35,27 +37,6 @@ namespace Nash
 		inline void operator/=(const float& scalar);
 
 	};
-}
-
-
-Nash::FVector3::FVector3()
-	:X(0), Y(0), Z(0)
-{
-}
-
-Nash::FVector3::FVector3(const float & x, const float & y, const float & z)
-	: X(x), Y(y), Z(z)
-{
-}
-
-Nash::FVector3::FVector3(const FVector2 & vec, const float & z)
-	: X(vec.X), Y(vec.Y), Z(z)
-{
-}
-
-Nash::FVector3::FVector3(const FVector3 & vec)
-	: X(vec.X), Y(vec.Y), Z(vec.Z)
-{
 }
 
 Nash::FVector3 Nash::FVector3::operator=(const FVector3 & vec)

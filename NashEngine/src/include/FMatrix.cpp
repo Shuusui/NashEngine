@@ -72,9 +72,11 @@ Nash::FMatrix Nash::FMatrix::Inverse() const
 		(-Matrix[0].X * Matrix[1].Y * Matrix[3].Z) + (Matrix[0].X * Matrix[1].Z * Matrix[3].Y) + (Matrix[1].X * Matrix[0].Y * Matrix[3].Z) - (Matrix[1].X * Matrix[0].Z * Matrix[3].Y) - (Matrix[3].X * Matrix[0].Y * Matrix[1].Z) + (Matrix[3].X * Matrix[0].Z * Matrix[1].Y),
 		(Matrix[0].X * Matrix[1].Y * Matrix[2].Z) - (Matrix[0].X * Matrix[1].Z * Matrix[2].Y) - (Matrix[1].X * Matrix[0].Y * Matrix[2].Z) + (Matrix[1].X * Matrix[0].Z * Matrix[2].Y) + (Matrix[2].X * Matrix[0].Y * Matrix[1].Z) - (Matrix[2].X * Matrix[0].Z * Matrix[1].Y)
 	);
-	float det = Matrix[0].X * mat[0].X + Matrix[0].Y * mat[1].X + Matrix[0].Z * mat[2].X + Matrix[0].W * mat[3].X; 
-	if (det < EPSILON)
-		det = 1.0 / det;
+	double det = Matrix[0].X * mat[0].X + Matrix[0].Y * mat[1].X + Matrix[0].Z * mat[2].X + Matrix[0].W * mat[3].X; 
+	if (det < VERYSMALL)
+		return FMatrix(false);
+
+	det = 1.0 / det;
 	return FMatrix(
 		mat[0].X * det, mat[0].Y * det, mat[0].Z * det, mat[0].W * det, 
 		mat[1].X * det, mat[1].Y * det, mat[1].Z * det, mat[1].W * det, 
@@ -180,21 +182,21 @@ void Nash::FMatrix::operator-=(const FMatrix & matrix)
 void Nash::FMatrix::operator*=(const FMatrix & matrix)
 {
 	Matrix[0].X = Matrix[0].X * matrix.Matrix[0].X + Matrix[0].Y * matrix.Matrix[1].X + Matrix[0].Z * matrix.Matrix[2].X + Matrix[0].W * matrix.Matrix[3].X;
-	Matrix[0].X * matrix.Matrix[0].Y + Matrix[0].Y * matrix.Matrix[1].Y + Matrix[0].Z * matrix.Matrix[2].Y + Matrix[0].W * matrix.Matrix[3].Y;
-	Matrix[0].X * matrix.Matrix[0].Z + Matrix[0].Y * matrix.Matrix[1].Z + Matrix[0].Z * matrix.Matrix[2].Z + Matrix[0].W * matrix.Matrix[3].Z;
-	Matrix[0].X * matrix.Matrix[0].W + Matrix[0].Y * matrix.Matrix[1].W + Matrix[0].Z * matrix.Matrix[2].W + Matrix[0].W * matrix.Matrix[3].W;
-	Matrix[1].X * matrix.Matrix[0].X + Matrix[1].Y * matrix.Matrix[1].X + Matrix[1].Z * matrix.Matrix[2].X + Matrix[1].W * matrix.Matrix[3].X;
-	Matrix[1].X * matrix.Matrix[0].Y + Matrix[1].Y * matrix.Matrix[1].Y + Matrix[1].Z * matrix.Matrix[2].Y + Matrix[1].W * matrix.Matrix[3].Y;
-	Matrix[1].X * matrix.Matrix[0].Z + Matrix[1].Y * matrix.Matrix[1].Z + Matrix[1].Z * matrix.Matrix[2].Z + Matrix[1].W * matrix.Matrix[3].Z;
-	Matrix[1].X * matrix.Matrix[0].W + Matrix[1].Y * matrix.Matrix[1].W + Matrix[1].Z * matrix.Matrix[2].W + Matrix[1].W * matrix.Matrix[3].W;
-	Matrix[2].X * matrix.Matrix[0].X + Matrix[2].Y * matrix.Matrix[1].X + Matrix[2].Z * matrix.Matrix[2].X + Matrix[2].W * matrix.Matrix[3].X;
-	Matrix[2].X * matrix.Matrix[0].Y + Matrix[2].Y * matrix.Matrix[1].Y + Matrix[2].Z * matrix.Matrix[2].Y + Matrix[2].W * matrix.Matrix[3].Y;
-	Matrix[2].X * matrix.Matrix[0].Z + Matrix[2].Y * matrix.Matrix[1].Z + Matrix[2].Z * matrix.Matrix[2].Z + Matrix[2].W * matrix.Matrix[3].Z;
-	Matrix[2].X * matrix.Matrix[0].W + Matrix[2].Y * matrix.Matrix[1].W + Matrix[2].Z * matrix.Matrix[2].W + Matrix[2].W * matrix.Matrix[3].W;
-	Matrix[3].X * matrix.Matrix[0].X + Matrix[3].X * matrix.Matrix[1].X + Matrix[3].Z * matrix.Matrix[2].X + Matrix[3].W * matrix.Matrix[3].X;
-	Matrix[3].X * matrix.Matrix[0].Y + Matrix[3].X * matrix.Matrix[1].Y + Matrix[3].Z * matrix.Matrix[2].Y + Matrix[3].W * matrix.Matrix[3].Y;
-	Matrix[3].X * matrix.Matrix[0].Z + Matrix[3].X * matrix.Matrix[1].Z + Matrix[3].Z * matrix.Matrix[2].Z + Matrix[3].W * matrix.Matrix[3].Z;
-	Matrix[3].X * matrix.Matrix[0].W + Matrix[3].X * matrix.Matrix[1].W + Matrix[3].Z * matrix.Matrix[2].Z + Matrix[3].W * matrix.Matrix[3].W;
+	Matrix[0].Y = Matrix[0].X * matrix.Matrix[0].Y + Matrix[0].Y * matrix.Matrix[1].Y + Matrix[0].Z * matrix.Matrix[2].Y + Matrix[0].W * matrix.Matrix[3].Y;
+	Matrix[0].Z = Matrix[0].X * matrix.Matrix[0].Z + Matrix[0].Y * matrix.Matrix[1].Z + Matrix[0].Z * matrix.Matrix[2].Z + Matrix[0].W * matrix.Matrix[3].Z;
+	Matrix[0].W = Matrix[0].X * matrix.Matrix[0].W + Matrix[0].Y * matrix.Matrix[1].W + Matrix[0].Z * matrix.Matrix[2].W + Matrix[0].W * matrix.Matrix[3].W;
+	Matrix[1].X = Matrix[1].X * matrix.Matrix[0].X + Matrix[1].Y * matrix.Matrix[1].X + Matrix[1].Z * matrix.Matrix[2].X + Matrix[1].W * matrix.Matrix[3].X;
+	Matrix[1].Y = Matrix[1].X * matrix.Matrix[0].Y + Matrix[1].Y * matrix.Matrix[1].Y + Matrix[1].Z * matrix.Matrix[2].Y + Matrix[1].W * matrix.Matrix[3].Y;
+	Matrix[1].Z = Matrix[1].X * matrix.Matrix[0].Z + Matrix[1].Y * matrix.Matrix[1].Z + Matrix[1].Z * matrix.Matrix[2].Z + Matrix[1].W * matrix.Matrix[3].Z;
+	Matrix[1].W = Matrix[1].X * matrix.Matrix[0].W + Matrix[1].Y * matrix.Matrix[1].W + Matrix[1].Z * matrix.Matrix[2].W + Matrix[1].W * matrix.Matrix[3].W;
+	Matrix[2].X = Matrix[2].X * matrix.Matrix[0].X + Matrix[2].Y * matrix.Matrix[1].X + Matrix[2].Z * matrix.Matrix[2].X + Matrix[2].W * matrix.Matrix[3].X;
+	Matrix[2].Y = Matrix[2].X * matrix.Matrix[0].Y + Matrix[2].Y * matrix.Matrix[1].Y + Matrix[2].Z * matrix.Matrix[2].Y + Matrix[2].W * matrix.Matrix[3].Y;
+	Matrix[2].Z = Matrix[2].X * matrix.Matrix[0].Z + Matrix[2].Y * matrix.Matrix[1].Z + Matrix[2].Z * matrix.Matrix[2].Z + Matrix[2].W * matrix.Matrix[3].Z;
+	Matrix[2].W = Matrix[2].X * matrix.Matrix[0].W + Matrix[2].Y * matrix.Matrix[1].W + Matrix[2].Z * matrix.Matrix[2].W + Matrix[2].W * matrix.Matrix[3].W;
+	Matrix[3].X = Matrix[3].X * matrix.Matrix[0].X + Matrix[3].X * matrix.Matrix[1].X + Matrix[3].Z * matrix.Matrix[2].X + Matrix[3].W * matrix.Matrix[3].X;
+	Matrix[3].Y = Matrix[3].X * matrix.Matrix[0].Y + Matrix[3].X * matrix.Matrix[1].Y + Matrix[3].Z * matrix.Matrix[2].Y + Matrix[3].W * matrix.Matrix[3].Y;
+	Matrix[3].Z = Matrix[3].X * matrix.Matrix[0].Z + Matrix[3].X * matrix.Matrix[1].Z + Matrix[3].Z * matrix.Matrix[2].Z + Matrix[3].W * matrix.Matrix[3].Z;
+	Matrix[3].W = Matrix[3].X * matrix.Matrix[0].W + Matrix[3].X * matrix.Matrix[1].W + Matrix[3].Z * matrix.Matrix[2].Z + Matrix[3].W * matrix.Matrix[3].W;
 }
 
 void Nash::FMatrix::operator/=(const FMatrix & matrix)
