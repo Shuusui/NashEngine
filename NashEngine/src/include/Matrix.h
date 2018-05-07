@@ -27,7 +27,7 @@ namespace Nash
 
 		
 
-		FMatrix operator=(const FMatrix& matrix); 
+		void operator=(const FMatrix& matrix); 
 		bool operator==(const FMatrix& matrix) const; 
 		bool operator!=(const FMatrix& matrix) const; 
 		FMatrix operator+(const FMatrix& matrix) const; 

@@ -98,9 +98,9 @@ float Nash::FMatrix::Determinante() const
 		);
 
 }
-Nash::FMatrix Nash::FMatrix::operator=(const FMatrix & matrix)
+void Nash::FMatrix::operator=(const FMatrix & matrix)
 {
-	return FMatrix(matrix);
+	Matrix[0] = matrix.Matrix[0]; Matrix[1] = matrix.Matrix[1]; Matrix[2] = matrix.Matrix[2]; Matrix[3] = matrix.Matrix[3];
 }
 
 bool Nash::FMatrix::operator==(const FMatrix & matrix) const

@@ -41,6 +41,12 @@
     <ClInclude Include="src\include\CapsuleCollider.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="src\include\Transform.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\Enums.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\include\FMatrix.cpp">

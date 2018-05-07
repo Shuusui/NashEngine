@@ -135,10 +135,12 @@
     <ClInclude Include="src\include\BaseMath.h" />
     <ClInclude Include="src\include\BoxCollider.h" />
     <ClInclude Include="src\include\CapsuleCollider.h" />
+    <ClInclude Include="src\include\Enums.h" />
     <ClInclude Include="src\include\ICollider.h" />
     <ClInclude Include="src\include\Matrix.h" />
     <ClInclude Include="src\include\Rigidbody.h" />
     <ClInclude Include="src\include\SphereCollider.h" />
+    <ClInclude Include="src\include\Transform.h" />
     <ClInclude Include="src\include\Vector2.h" />
     <ClInclude Include="src\include\Vector3.h" />
     <ClInclude Include="src\include\Vector4.h" />

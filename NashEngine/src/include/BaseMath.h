@@ -10,8 +10,8 @@ namespace Nash
 
 	inline static float AbsF(const float& value); 
 	inline static double AbsD(const double& value);
-	inline static bool CompareF(const float& value1, const float& value2);
-	inline static bool CompareD(const double& value1, const double& value2);
+	inline static bool Compare(const float& value1, const float& value2);
+	inline static bool Compare(const double& value1, const double& value2);
 }
 
 
@@ -24,12 +24,12 @@ double Nash::AbsD(const double& value)
 	return value > 0 ? value : value * -1;
 }
 
-bool Nash::CompareF(const float & value1, const float & value2)
+bool Nash::Compare(const float & value1, const float & value2)
 {
 	return AbsF(value1 - value2) < EPSILON ? true : false; 
 } 
 
-bool Nash::CompareD(const double & value1, const double & value2)
+bool Nash::Compare(const double & value1, const double & value2)
 {
 	return AbsD(value1-value2) < VERYSMALL ?  true: false;
 }
