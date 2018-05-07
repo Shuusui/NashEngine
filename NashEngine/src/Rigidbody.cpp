@@ -1,4 +1,4 @@
-#include "Rigidbody.h"
+#include "include\Rigidbody.h"
 
 Nash::Rigidbody::Rigidbody(const FVector3 & position, const float& mass,const bool& simulatePhysics, const bool& enableGravity)
 	:m_position(position)
@@ -18,7 +18,7 @@ void Nash::Rigidbody::DeltaUpdate()
 
 void Nash::Rigidbody::AddForce(const FVector3 & dir)
 {
-
+	m_force + dir;
 }
 
 void Nash::Rigidbody::AddImpulse(const FVector3 & dir)

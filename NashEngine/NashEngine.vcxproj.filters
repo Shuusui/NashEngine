@@ -49,13 +49,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\include\FMatrix.cpp">
+    <ClCompile Include="src\BoxCollider.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="src\include\Rigidbody.cpp">
+    <ClCompile Include="src\FMatrix.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="src\include\BoxCollider.cpp">
+    <ClCompile Include="src\Rigidbody.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

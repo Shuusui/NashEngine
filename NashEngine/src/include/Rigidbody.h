@@ -9,7 +9,7 @@
 
 namespace Nash
 {
-	class Rigidbody
+	class __declspec(dllexport) Rigidbody
 	{
 	private: 
 		bool m_bSimulatePhysics;
@@ -31,15 +31,6 @@ namespace Nash
 		* Default constructor is disabled because every Rigidbody needs a position to enable forces
 		*/
 		Rigidbody() = delete;
-		/**
-		* Copy constructor is disabled because it shouldn't be possible to copy a rigidbody because it would be to expensive to copy all forces
-		* (Maybe better to copy all changable values outside the rigidbody and insert it to the rigidbody)
-		*/
-		Rigidbody(const Rigidbody&) = delete; 
-		/**
-		* Same as Copy constructor
-		*/
-		Rigidbody operator=(const Rigidbody&) = delete;
 		/**
 		* Function which should be called every delta Time and not every frame, because of physics
 		* 

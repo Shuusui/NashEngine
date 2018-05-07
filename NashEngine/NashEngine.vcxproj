@@ -146,9 +146,9 @@
     <ClInclude Include="src\include\Vector4.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\include\BoxCollider.cpp" />
-    <ClCompile Include="src\include\FMatrix.cpp" />
-    <ClCompile Include="src\include\Rigidbody.cpp" />
+    <ClCompile Include="src\BoxCollider.cpp" />
+    <ClCompile Include="src\FMatrix.cpp" />
+    <ClCompile Include="src\Rigidbody.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,5 @@
 #pragma once
+#include <cmath>
 
 namespace Nash
 {
@@ -12,6 +13,8 @@ namespace Nash
 	inline static double AbsD(const double& value);
 	inline static bool Compare(const float& value1, const float& value2);
 	inline static bool Compare(const double& value1, const double& value2);
+	inline static float Sqrt(const float& value) { return std::sqrt(value); }
+	inline static double Sqrt(const double& value) { return std::sqrt(value); }
 }
 
 

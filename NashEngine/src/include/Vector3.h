@@ -51,7 +51,7 @@ inline float Nash::FVector3::Distance(const FVector3 & vec)
 
 inline float Nash::FVector3::Length()
 {
-	return Nash::AbsF(std::sqrt(X*X + Y*Y + Z*Z));
+	return Nash::AbsF(Nash::Sqrt(X*X + Y*Y + Z*Z));
 }
 
 inline void Nash::FVector3::operator=(const FVector3 & vec)
