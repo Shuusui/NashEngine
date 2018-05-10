@@ -136,6 +136,7 @@
     <ClInclude Include="src\include\BoxCollider.h" />
     <ClInclude Include="src\include\CapsuleCollider.h" />
     <ClInclude Include="src\include\Enums.h" />
+    <ClInclude Include="src\include\Defines.h" />
     <ClInclude Include="src\include\ICollider.h" />
     <ClInclude Include="src\include\Matrix.h" />
     <ClInclude Include="src\include\Rigidbody.h" />
