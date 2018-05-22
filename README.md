@@ -1,5 +1,3 @@
 # NashEngine
 This will be my own physics engine. 
-
-
-https://ci.appveyor.com/api/projects/status/github/Shuusui/NashEngine?branch=master&svg=true
+[![Build status](https://ci.appveyor.com/api/projects/status/kbyns4eomutpti7f?svg=true)](https://ci.appveyor.com/project/Shuusui/NashEngine)
