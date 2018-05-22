@@ -1,12 +1,13 @@
 #pragma once
 #pragma region Internal Includes
 #include "BaseMath.h"
+#include "Defines.h"
 #pragma endregion 
 
 
 namespace Nash
 {
-	class FVector2
+	class NASHEXPORT FVector2
 	{
 	public:
 		float X, Y;

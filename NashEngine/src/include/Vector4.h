@@ -8,7 +8,7 @@
 
 namespace Nash
 {
-	class FVector4
+	class __declspec(dllexport) FVector4
 	{
 	public:
 		float X; float Y; float Z; float W;

@@ -98,6 +98,89 @@ float Nash::FMatrix::Determinante() const
 		);
 
 }
+void Nash::FMatrix::RotateX(const float & x)
+{
+	
+	*this *= FMatrix(1, 0, 0, 0,
+		0, cos(x), -sin(x), 0,
+		0, sin(x), cos(x), 0,
+		0, 0, 0, 1);
+}
+void Nash::FMatrix::RotateY(const float & y)
+{
+	
+	*this *= FMatrix(cos(y), 0, sin(y), 0,
+		0, 1, 0, 0,
+		-sin(y), 0, cos(y), 0,
+		0, 0, 0, 1);
+}
+void Nash::FMatrix::RotateZ(const float & z)
+{
+	
+	*this *= FMatrix(cos(z), -sin(z), 0, 0,
+		sin(z), cos(z), 0, 0,
+		0, 0, 1, 0,
+		0, 0, 0, 1);
+}
+void Nash::FMatrix::Scale(const FVector3 & scale)
+{
+	*this *= FMatrix(scale.X, 0, 0, 0,
+		0, scale.Y, 0, 0,
+		0, 0, scale.Z, 0,
+		0, 0, 0, 1);
+}
+void Nash::FMatrix::ScaleX(const float & x)
+{
+	*this *= FMatrix(x, 0, 0, 0,
+		0, 1, 0, 0,
+		0, 0, 1, 0,
+		0, 0, 0, 1);
+}
+void Nash::FMatrix::ScaleY(const float & y)
+{
+	*this *= FMatrix(1, 0, 0, 0,
+		0, y, 0, 0,
+		0, 0, 1, 0,
+		0, 0, 0, 1);
+}
+void Nash::FMatrix::ScaleZ(const float & z)
+{
+	*this *= FMatrix(1, 0, 0, 0,
+		0, 1, 0, 0,
+		0, 0, 1, 0,
+		0, 0, 0, 1);
+}
+void Nash::FMatrix::Translate(const FVector3 & translation)
+{
+	*this *= FMatrix(1, 0, 0, 0,
+		0, 1, 0, 0,
+		0, 0, 1, 0,
+		translation.X, translation.Y, translation.Z, 1);
+}
+void Nash::FMatrix::TranslateX(const float & x)
+{
+	*this *= FMatrix(
+		1, 0, 0, 0,
+		0, 1, 0, 0,
+		0, 0, 1, 0,
+		x, 0, 0, 1);
+}
+void Nash::FMatrix::TranslateY(const float & y)
+{
+	*this *= FMatrix(
+		1, 0, 0, 0,
+		0, 1, 0, 0,
+		0, 0, 1, 0,
+		0, y, 0, 1);
+}
+void Nash::FMatrix::TranslateZ(const float & z)
+{
+	*this *= FMatrix(
+		1, 0, 0, 0,
+		0, 1, 0, 0,
+		0, 0, 1, 0,
+		0, 0, z, 1);
+}
 void Nash::FMatrix::operator=(const FMatrix & matrix)
 {
 	Matrix[0] = matrix.Matrix[0]; Matrix[1] = matrix.Matrix[1]; Matrix[2] = matrix.Matrix[2]; Matrix[3] = matrix.Matrix[3];
