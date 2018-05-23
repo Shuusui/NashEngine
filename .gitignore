@@ -287,3 +287,15 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+data/NashTestProject/NashTestProject\.tlog/CL\.write\.1\.tlog
+
+data/NashTestProject/NashTestProject\.tlog/link\.read\.1\.tlog
+
+data/NashTestProject/NashTestProject\.tlog/link\.write\.1\.tlog
+
+data/NashTestProject/vc141\.idb
+
+data/NashTestProject/NashTestProject\.tlog/CL\.command\.1\.tlog
+
+data/NashTestProject/NashTestProject\.tlog/CL\.read\.1\.tlog
