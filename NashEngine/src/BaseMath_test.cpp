@@ -2,7 +2,7 @@
 #include "include\BaseMath.h"
 
 
-TEST(basemath, AbsF)
+TEST(baseMath, AbsF)
 {
 	float x = -1.5f;
 	x = Nash::AbsF(x);
@@ -11,7 +11,7 @@ TEST(basemath, AbsF)
 	EXPECT_FLOAT_EQ(x, 1.5f);
 }
 
-TEST(basmath, AbsD)
+TEST(baseMath, AbsD)
 {
 	double x = -2.5f; 
 	x = Nash::AbsD(x);
@@ -33,3 +33,14 @@ TEST(baseMath, SqrtF)
 	EXPECT_FLOAT_EQ(3.0f, Nash::Sqrt(x));
 }
 
+TEST(baseMath, SquareF)
+{
+	float x = 2; 
+	EXPECT_FLOAT_EQ(4.0f, Nash::Square(x));
+}
+
+TEST(baseMath, SquareD)
+{
+	double x = 2; 
+	EXPECT_FLOAT_EQ(4.0f, Nash::Square(x));
+}

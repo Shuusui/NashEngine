@@ -3,6 +3,8 @@
 #include "Defines.h"
 #include "Vector4.h"
 #include "Vector3.h"
+#include "Matrix.h"
+#include "BaseMath.h"
 #pragma endregion 
 
 namespace Nash

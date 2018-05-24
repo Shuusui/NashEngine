@@ -15,6 +15,8 @@ namespace Nash
 	inline static bool Compare(const double& value1, const double& value2);
 	inline static float Sqrt(const float& value) { return std::sqrt(value); }
 	inline static double Sqrt(const double& value) { return std::sqrt(value); }
+	inline static float Square(const float& value) { return value * value; }
+	inline static double Square(const double& value) { return value * value; }
 }
 
 

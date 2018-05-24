@@ -16,9 +16,11 @@ namespace Nash
 		FVector3(const FVector2& vec, const float& z) : X(vec.X), Y(vec.Y), Z(z) {};
 		FVector3(const FVector3& vec) : X(vec.X), Y(vec.Y), Z(vec.Z) {};
 
-		float Distance(const FVector3& vec);
-		float Length();
+		inline float Distance(const FVector3& vec);
+		inline float Length();
 
+		inline void Normalize();
+		inline void Normalize(FVector3& vec);
 
 		inline void operator=(const FVector3& vec);
 		inline bool operator==(const FVector3& vec) const;
@@ -52,6 +54,16 @@ inline float Nash::FVector3::Distance(const FVector3 & vec)
 inline float Nash::FVector3::Length()
 {
 	return Nash::AbsF(Nash::Sqrt(X*X + Y*Y + Z*Z));
+}
+
+inline void Nash::FVector3::Normalize()
+{
+	*this /= this->Length();
+}
+
+inline void Nash::FVector3::Normalize(FVector3 & vec)
+{
+	vec /= vec.Length();
 }
 
 inline void Nash::FVector3::operator=(const FVector3 & vec)
