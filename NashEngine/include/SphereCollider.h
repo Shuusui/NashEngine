@@ -5,7 +5,7 @@
 
 namespace Nash
 {
-	class __declspec(dllexport) SphereCollider : public ICollider
+	class NASHEXPORT SphereCollider : public ICollider
 	{
 	private: 
 		float m_radius;

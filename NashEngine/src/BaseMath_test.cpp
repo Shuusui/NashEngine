@@ -1,6 +1,5 @@
 #include "gtest\gtest.h"
-#include "include\BaseMath.h"
-
+#include "BaseMath.h"
 
 TEST(baseMath, AbsF)
 {

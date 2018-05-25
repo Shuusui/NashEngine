@@ -1,4 +1,4 @@
-#include "include\Rigidbody.h"
+#include "..\include\Rigidbody.h"
 
 Nash::Rigidbody::Rigidbody(const FVector3 & position, const float& mass,const bool& simulatePhysics, const bool& enableGravity)
 	:m_position(position)

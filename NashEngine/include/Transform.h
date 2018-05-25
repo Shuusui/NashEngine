@@ -7,7 +7,7 @@
 
 namespace Nash
 {
-	class Transform
+	class NASHEXPORT Transform
 	{
 	private:
 		FVector3 m_position; 

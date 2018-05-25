@@ -3,7 +3,7 @@
 
 namespace Nash
 {
-	class Enums
+	NASHEXPORT class Enums
 	{
 	public:
 		enum class ColliderType

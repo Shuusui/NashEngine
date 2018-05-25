@@ -1,4 +1,4 @@
-#include "include\BoxCollider.h"
+#include "..\include\BoxCollider.h"
 
 bool Nash::BoxCollider::EnterCollision(ICollider *(*obj)())
 {
@@ -19,6 +19,7 @@ bool Nash::BoxCollider::EnterCollision(ICollider *(*obj)())
 
 void Nash::BoxCollider::DeltaUpdate()
 {
+
 }
 
 void Nash::BoxCollider::Update()

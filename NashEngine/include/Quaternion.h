@@ -1,6 +1,6 @@
 #pragma once
 #pragma region Internal Includes
-#include "Defines.h"
+#include "..\src\include\Defines.h"
 #include "Vector4.h"
 #include "Vector3.h"
 #include "Matrix.h"

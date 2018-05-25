@@ -7,7 +7,7 @@
 
 namespace Nash
 {
-	class __declspec(dllexport) FVector3
+	class NASHEXPORT FVector3
 	{
 	public:
 		float X; float Y; float Z;
@@ -73,7 +73,8 @@ inline void Nash::FVector3::operator=(const FVector3 & vec)
 
 inline bool Nash::FVector3::operator==(const FVector3 & vec) const
 {
-	return Nash::AbsF(X - vec.X) < EPSILON && Nash::AbsF(Y - vec.Y) < EPSILON && Nash::AbsF(Z - vec.Z) ? true : false;
+	
+	return Nash::Compare(Nash::AbsF(X), vec.X) && Nash::Compare(Nash::AbsF(Y), Nash::AbsF(vec.Y)) && Nash::Compare(Nash::AbsF(Z), Nash::AbsF(vec.Z)) ? true : false;
 }
 
 inline bool Nash::FVector3::operator!=(const FVector3 & vec) const

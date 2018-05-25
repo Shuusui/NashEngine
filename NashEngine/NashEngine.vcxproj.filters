@@ -5,53 +5,56 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Headerdateien">
+    <Filter Include="Internal Headerfiles">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
+    <Filter Include="External Headerfiles">
+      <UniqueIdentifier>{7ae45a5f-365a-4ba5-b7b6-d0a8f1f88a8c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\include\BaseMath.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\Vector2.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\Vector3.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\Vector4.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\Matrix.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\Rigidbody.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\ICollider.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\BoxCollider.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\SphereCollider.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\CapsuleCollider.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\Transform.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\Enums.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="src\include\Defines.h">
-      <Filter>Headerdateien</Filter>
+      <Filter>Internal Headerfiles</Filter>
     </ClInclude>
-    <ClInclude Include="src\include\Quaternion.h">
-      <Filter>Headerdateien</Filter>
+    <ClInclude Include="include\BoxCollider.h">
+      <Filter>External Headerfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CapsuleCollider.h">
+      <Filter>External Headerfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Enums.h">
+      <Filter>External Headerfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ICollider.h">
+      <Filter>External Headerfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Matrix.h">
+      <Filter>External Headerfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Quaternion.h">
+      <Filter>External Headerfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Rigidbody.h">
+      <Filter>External Headerfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SphereCollider.h">
+      <Filter>External Headerfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Transform.h">
+      <Filter>External Headerfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Vector2.h">
+      <Filter>External Headerfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Vector3.h">
+      <Filter>External Headerfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Vector4.h">
+      <Filter>External Headerfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BaseMath.h">
+      <Filter>External Headerfiles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
