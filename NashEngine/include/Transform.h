@@ -1,5 +1,4 @@
 #pragma once
-
 #pragma region Internal Includes
 #include "Vector3.h"
 #include "Vector4.h"

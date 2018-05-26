@@ -1,7 +1,7 @@
 #pragma once
 #pragma region Internal Includes
 #include "BaseMath.h"
-#include "..\src\include\Defines.h"
+#include "internal\Defines.h"
 #pragma endregion 
 
 

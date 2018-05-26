@@ -26,6 +26,7 @@ namespace Nash
 		Rigidbody* m_rigidbody;
 		Enums::ColliderType m_collType;
 		bool m_bIsStatic;
+	protected:
 		std::vector<ICollider*> m_nearStaticCollider; 
 		std::list<ICollider*> m_nearDynamicCollider;
 	public:
@@ -73,18 +74,26 @@ namespace Nash
 		void SetRigidbody(Rigidbody* rigidbody) { m_rigidbody = rigidbody; }
 		void SetIsStatic(const bool& isStatic) { m_bIsStatic = isStatic; }
 
-		virtual bool EnterCollision(ICollider* (*obj)()) = 0;
-
 		virtual ~ICollider() { delete m_rigidbody; };
+		inline void AddNearCollider(ICollider* coll);
+		void RemoveNearCollider(ICollider* coll);
 
 	protected:
 		virtual void DeltaUpdate() = 0;
 		virtual void Update() = 0;
+		virtual void Start();
+		virtual void IntersectDynamic() = 0;
+		virtual void IntersectStatic() = 0;
+		virtual bool CheckIntersection(ICollider* coll) = 0;
 	private: 
-		inline void AddNearCollider(ICollider* coll);
-		void RemoveNearCollider(ICollider* coll);
 	};
 
+
+	inline void ICollider::Start()
+	{
+		if(m_bIsStatic)
+			IntersectStatic();
+	}
 
 	inline void ICollider::AddNearCollider(ICollider* coll)
 	{

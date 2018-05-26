@@ -30,10 +30,15 @@ namespace Nash
 		FVector3 GetSize() const { return m_bounds; }
 		FVector3 GetExtents() const { return m_bounds / 2; }
 
-		bool EnterCollision(ICollider* (*obj)()); 
 
+		
 	private: 
+		void IntersectDynamic() final;
+		void IntersectStatic() final;
+		bool CheckIntersection(ICollider* coll) final;
+
 		void DeltaUpdate() final; 
 		void Update() final;
+		void Start() final;
 	};
 }

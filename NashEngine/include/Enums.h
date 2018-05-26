@@ -1,4 +1,5 @@
 #pragma once
+#include "internal\Defines.h"
 
 
 namespace Nash

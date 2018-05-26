@@ -19,5 +19,14 @@ namespace Nash
 
 		float GetRadius() const { m_radius; }
 		float GetHeight() const { m_height; }
+
+	private:
+		void IntersectDynamic() final;
+		void IntersectStatic() final;
+		bool CheckIntersection(ICollider* coll) final;
+
+		void DeltaUpdate() final;
+		void Update() final;
+		void Start() final;
 	};
 }

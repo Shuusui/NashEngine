@@ -1,20 +1,34 @@
 #include "..\include\BoxCollider.h"
 
-bool Nash::BoxCollider::EnterCollision(ICollider *(*obj)())
+void Nash::BoxCollider::IntersectDynamic()
 {
-	switch (obj()->Type())
-	{
-	case Enums::ColliderType::BoxCollider: 
-	{
 
+}
+
+void Nash::BoxCollider::IntersectStatic()
+{
+	for (int i = 0; i < m_nearStaticCollider.size(); i++)
+	{
+		if (CheckIntersection(m_nearStaticCollider[i]))
+		{
+
+		}
 	}
-		break; 
-	case Enums::ColliderType::SphereCollider: 
-		break; 
+}
+
+bool Nash::BoxCollider::CheckIntersection(ICollider * coll)
+{
+	switch (coll->Type())
+	{
+	case Enums::ColliderType::BoxCollider:
+		
+		break;
 	case Enums::ColliderType::CapsuleCollider: 
 		break;
+	case Enums::ColliderType::SphereCollider:
+		break;
 	}
-	return true;
+	return false;
 }
 
 void Nash::BoxCollider::DeltaUpdate()
@@ -25,4 +39,9 @@ void Nash::BoxCollider::DeltaUpdate()
 void Nash::BoxCollider::Update()
 {
 	
+}
+
+void Nash::BoxCollider::Start()
+{
+	ICollider::Start();
 }

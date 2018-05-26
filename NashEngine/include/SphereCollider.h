@@ -16,5 +16,14 @@ namespace Nash
 		SphereCollider(const ICollider& collider, const float& radius = 1.0f) :ICollider(collider, Enums::ColliderType::SphereCollider), m_radius(radius) {}
 
 		float GetRadius() const { return m_radius; }
+
+	private:
+		void IntersectDynamic() final;
+		void IntersectStatic() final;
+		bool CheckIntersection(ICollider* coll) final;
+
+		void DeltaUpdate() final;
+		void Update() final;
+		void Start() final;
 	};
 }

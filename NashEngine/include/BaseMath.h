@@ -1,6 +1,6 @@
 #pragma once
 #include <cmath>
-#include "..\src\include\Defines.h"
+#include "internal\Defines.h"
 
 namespace Nash
 {

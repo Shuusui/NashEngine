@@ -1,5 +1,4 @@
 #pragma once
-
 #pragma region Internal Includes
 #include "BaseMath.h"
 #include "Vector2.h"
