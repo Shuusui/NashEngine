@@ -150,8 +150,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\BoxCollider.cpp" />
+    <ClCompile Include="src\CapsuleCollider.cpp" />
     <ClCompile Include="src\FMatrix.cpp" />
     <ClCompile Include="src\Rigidbody.cpp" />
+    <ClCompile Include="src\SphereCollider.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
