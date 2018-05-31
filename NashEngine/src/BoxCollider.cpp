@@ -1,5 +1,6 @@
 #include "..\include\BoxCollider.h"
 
+
 void Nash::BoxCollider::IntersectDynamic()
 {
 
@@ -20,12 +21,11 @@ bool Nash::BoxCollider::CheckIntersection(ICollider * coll)
 {
 	switch (coll->Type())
 	{
-	case Enums::ColliderType::BoxCollider:
-		
+	case Enums::EColliderType::BoxCollider:		
 		break;
-	case Enums::ColliderType::CapsuleCollider: 
+	case Enums::EColliderType::CapsuleCollider:
 		break;
-	case Enums::ColliderType::SphereCollider:
+	case Enums::EColliderType::SphereCollider:
 		break;
 	}
 	return false;
