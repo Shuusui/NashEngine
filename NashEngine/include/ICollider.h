@@ -75,7 +75,7 @@ namespace Nash
 
 		virtual ~ICollider() { delete m_rigidbody; };
 		inline void AddNearCollider(ICollider* coll);
-		void RemoveNearCollider(ICollider* coll);
+		//void RemoveNearCollider(ICollider* coll);
 
 	protected:
 		virtual void DeltaUpdate() = 0;
@@ -101,7 +101,7 @@ namespace Nash
 		else
 			m_nearDynamicCollider.push_back(coll);
 	}
-	void ICollider::RemoveNearCollider(ICollider* coll)
+	/*void ICollider::RemoveNearCollider(ICollider* coll)
 	{
 		if (coll->IsStatic())
 		{
@@ -123,5 +123,5 @@ namespace Nash
 				}
 			}
 		}
-	}
+	}*/
 }
